@@ -8,17 +8,21 @@
     <artifactId>springcloud-netflix-itoken</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <modules>
-        <module>itoken-config</module>
-        <module>itoken-eureka</module>
-    </modules>
-
-    <!-- Inherit defaults from Spring Boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.2.RELEASE</version>
     </parent>
+
+    <modules>
+        <module>itoken-config</module>
+        <module>itoken-eureka</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
 
     <dependencyManagement>
         <dependencies>

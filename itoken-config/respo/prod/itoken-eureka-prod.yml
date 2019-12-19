@@ -1,6 +1,6 @@
 spring:
   application:
-    name: eureka-server
+    name: itoken-eureka
 
 server:
   port: 8761
@@ -14,4 +14,4 @@ eureka:
     # 表示是否从 Eureka 获取注册信息，如果是单一节点，不需要同步其他 Eureka 节点，则可以设置为 false，但此处为集群，应该设置为 true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://192.168.3.128:8761/eureka/,http://192.168.3.128:8861/eureka/,http://192.168.3.128:8961/eureka/
+      defaultZone: http://192.168.3.129:8761/eureka/,http://192.168.3.129:8861/eureka/,http://192.168.3.129:8961/eureka/

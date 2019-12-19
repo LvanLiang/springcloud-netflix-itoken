@@ -1,0 +1,30 @@
+stages:
+  - build
+  - push
+  - run
+  - clean
+
+build:
+  stage: build
+  script:
+    - mvn clean package
+    - cp target/itoken-config-0.0.1-SNAPSHOT.jar docker
+    - cd docker
+    - docker build -t 192.168.3.129:5000/itoken-config .
+
+push:
+  stage: push
+  script:
+    - docker push 192.168.3.129:5000/itoken-config
+
+run:
+  stage: run
+  script:
+    - cd docker
+    - docker-compose down
+    - docker-compose up -d
+
+clean:
+  stage: clean
+  script:
+    - docker rmi $(docker images -q -f dangling=true)

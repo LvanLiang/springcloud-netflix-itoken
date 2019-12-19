@@ -1,0 +1,18 @@
+version:  '3.1'
+services:
+  itoken-eureka-1:
+    restart:  always
+    image:  192.168.3.129:5000/itoken-eureka
+    container_name:  itoken-eureka-1
+    ports:
+     - 8761:8761
+    networks:
+     - itoken-eureka-network
+    depends_on:
+     - eureka-config
+  eureka-config:
+    image: 192.168.3.129:5000/itoken-config
+
+
+networks:
+  itoken-eureka-network:

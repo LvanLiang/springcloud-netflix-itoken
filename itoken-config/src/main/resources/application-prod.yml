@@ -15,14 +15,14 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8084
+        url: http://192.168.3.129:8084
   zipkin:
     base-url: http://192.168.3.129:9411
 
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://192.168.3.129:8761/eureka/,http://192.168.3.129:8861/eureka/,http://192.168.3.129:8961/eureka/
   instance:
     instance-id: itoken-config #自定义服务名称信息
     prefer-ip-address: true  #访问路径可以显示IP地址
